@@ -1,0 +1,17 @@
+// Add "custom/music" to modules-left / modules-center / modules-right,
+// then merge this block into your waybar config.
+"custom/music": {
+    // drop --icon-only if you want "artist - title" in the bar instead of just the icon
+    "exec": "nowplay waybar --icon-only",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+
+    // open the popup (click again to close). With the layer-shell build it is
+    // centred right under the bar; add e.g. "--margin-y 6" for a bigger gap.
+    "on-click": "nowplay-popup",
+    "on-click-middle": "nowplay toggle", // play / pause
+    "on-click-right": "nowplay next",
+    "on-scroll-up": "nowplay vol +5",
+    "on-scroll-down": "nowplay vol -5"
+}

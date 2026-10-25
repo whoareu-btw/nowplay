@@ -1,0 +1,41 @@
+[package]
+name = "nowplay"
+version = "0.1.0"
+edition = "2021"
+description = "Tiny MPRIS music controller: waybar module + dark popup for Firefox/Chromium and friends"
+license = "MIT"
+
+[lib]
+name = "nowplay"
+path = "src/lib.rs"
+
+[[bin]]
+name = "nowplay"
+path = "src/bin/nowplay.rs"
+
+[[bin]]
+name = "nowplay-popup"
+path = "src/bin/nowplay-popup/main.rs"
+required-features = ["gui"]
+
+[dependencies]
+dbus = "0.9"
+
+# GUI only (the `nowplay` CLI/waybar binary never links these)
+gtk4 = { version = "0.9", features = ["v4_6"], optional = true }
+async-channel = { version = "2", optional = true }
+ureq = { version = "2", default-features = false, features = ["tls"], optional = true }
+gtk4-layer-shell = { version = "0.4", optional = true }
+
+[features]
+default = ["gui"]
+gui = ["dep:gtk4", "dep:async-channel", "dep:ureq"]
+# Anchor the popup under your bar on Wayland (needs libgtk4-layer-shell installed)
+layer-shell = ["gui", "dep:gtk4-layer-shell"]
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

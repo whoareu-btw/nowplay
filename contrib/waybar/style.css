@@ -1,0 +1,8 @@
+/* The font used by waybar must be a Nerd Font (or have "Symbols Nerd Font"
+   as a fallback) or the play/pause glyphs show as empty boxes. */
+#custom-music {
+  padding: 0 10px;
+  color: #cdd6f4;
+}
+#custom-music.playing { color: #cba6f7; }
+#custom-music.paused  { color: #6c7086; }

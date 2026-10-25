@@ -1,0 +1,65 @@
+/* Simple dark theme. Sliders and controls are dark grey. Edit freely. */
+window.np {
+  background: #11111b;
+  color: #cdd6f4;
+  border-radius: 14px;
+  border: 1px solid #313244;
+}
+.card { padding: 14px; }
+
+.icon {
+  font-family: "Symbols Nerd Font", "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font",
+               "FiraCode Nerd Font", "Hack Nerd Font", "MesloLGS NF", sans-serif;
+}
+
+.art { border-radius: 10px; background: #181825; }
+.ph  { font-size: 38px; color: #45475a; }
+
+.title  { font-weight: 700; font-size: 15px; color: #cdd6f4; }
+.artist { color: #bac2de; font-size: 13px; }
+.dim    { color: #6c7086; font-size: 12px; }
+.time   { color: #8c8c8c; font-size: 11px; font-feature-settings: "tnum"; }
+
+/* ---- controls: dark grey ------------------------------------------- */
+button.ctl {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #9a9a9a;
+  font-size: 17px;
+  padding: 6px 14px;
+  border-radius: 10px;
+}
+button.ctl:hover { background: #262626; color: #d0d0d0; }
+button.ctl:disabled { color: #3a3a3a; }
+
+button.ctl.play {
+  background: #2c2c2c;
+  color: #d0d0d0;
+  border: 1px solid #3b3b3b;
+  font-size: 18px;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+button.ctl.play:hover { background: #383838; color: #ffffff; }
+button.ctl.play:disabled { background: #1e1e1e; color: #4a4a4a; border-color: #2a2a2a; }
+
+/* ---- sliders: dark grey -------------------------------------------- */
+scale trough {
+  background: #232323;
+  min-height: 4px;
+  border-radius: 4px;
+}
+scale trough highlight { background: #565656; border-radius: 4px; }
+scale trough slider {
+  min-width: 12px;
+  min-height: 12px;
+  margin: -4px;
+  background: #8a8a8a;
+  border: none;
+  box-shadow: none;
+  border-radius: 999px;
+}
+scale:hover trough slider { background: #a8a8a8; }
+scale:disabled trough highlight { background: #2e2e2e; }
+scale:disabled trough slider { background: #404040; }
